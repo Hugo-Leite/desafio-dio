@@ -14,6 +14,16 @@ do {
     4- descansar`,
     );
 
+    chooseHeroAction(opcao);
+
+    calculateHeroLevel();
+
+    alert(
+        `O herói de nome ${nameHero} fez a ação de ${actionHero} e está no nível de ${levelHero}`,
+    );
+} while (opcao < "4");
+
+function chooseHeroAction(opcao) {
     switch (opcao) {
         case "1":
             xpHero += 500;
@@ -28,7 +38,9 @@ do {
             actionHero = "derrotar o boss";
             break;
     }
+}
 
+function calculateHeroLevel() {
     if (xpHero <= 1000) {
         levelHero = "ferro";
     } else if (xpHero >= 1001 && xpHero <= 2000) {
@@ -46,8 +58,4 @@ do {
     } else if (xpHero >= 10001) {
         levelHero = "radiante";
     }
-
-    alert(
-        `O herói de nome ${nameHero} fez a ação de ${actionHero} e está no nível de ${levelHero}`,
-    );
-} while (opcao < "4");
+}
